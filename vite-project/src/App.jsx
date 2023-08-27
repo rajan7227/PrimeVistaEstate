@@ -1,5 +1,7 @@
 import "./App.css";
 import Header from "./components/header/Header";
+import Hero from "./components/hero/Hero";
+import Slider from "./components/slider/Slider";
 
 function App() {
 
@@ -7,6 +9,8 @@ function App() {
   return (
     <div className="app">
       <Header />
+      <Hero />
+      <Slider />
     </div>
   );
 }
