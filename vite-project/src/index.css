@@ -16,6 +16,10 @@
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
 }
+
+ul{
+  list-style-type: none;  
+}
 .wrapper{
   background-color: white;
 }
@@ -127,3 +131,4 @@ a {
   cursor: pointer;
   transform: scale(1.1);
 }
+
