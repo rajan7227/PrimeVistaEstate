@@ -1,63 +1,42 @@
 import "./Card.scss";
+import 'swiper/css';
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import houses from "../../data/houses.json";
+import React from "react";
+import { sliderSettings } from "../../utils/slidersetting";
 
 function Card() {
   return (
     <>
-      <article className="card__main" >
+      <article>
         <div className="card">
-        <div className="card__wrapper">
-          <div className="card__card">
-            <img className="card__image" src="https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"></img>
-            <div>
-              <div className="card__details">
-                <h4 className="card__title">DETACHED HOUSE • 5Y OLD</h4>
-                <p className="card__price">$750,000</p>
-                <p className="card__address">742 Evergreen Terrace</p>
-              </div>
-              <div className="card__feature">
-              <p className="card__bedroom">3 Bedrooms</p>
-              <p className="card__bathroom">2 Bathrooms</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        </div>
-        {/* /////////////// */}
-        <div className="card">
-        <div className="card__wrapper">
-          <div className="card__card">
-            <img className="card__image" src="https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"></img>
-            <div>
-              <div className="card__details">
-                <h4 className="card__title">DETACHED HOUSE • 5Y OLD</h4>
-                <p className="card__price">$750,000</p>
-                <p className="card__address">742 Evergreen Terrace</p>
-              </div>
-              <div className="card__feature">
-              <p className="card__bedroom">3 Bedrooms</p>
-              <p className="card__bathroom">2 Bathrooms</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        </div>
-        <div className="card">
-        <div className="card__wrapper">
-          <div className="card__card">
-            <img className="card__image" src="https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"></img>
-            <div>
-              <div className="card__details">
-                <h4 className="card__title">DETACHED HOUSE • 5Y OLD</h4>
-                <p className="card__price">$750,000</p>
-                <p className="card__address">742 Evergreen Terrace</p>
-              </div>
-              <div className="card__feature">
-              <p className="card__bedroom">3 Bedrooms</p>
-              <p className="card__bathroom">2 Bathrooms</p>
-              </div>
-            </div>
-          </div>
-        </div>
+          <Swiper {...sliderSettings}>
+            <SliderButtons/>
+            {houses.map((card, i) => (
+              <SwiperSlide key={i} className="one">
+                <div className="card__wrapper">
+                  <div className="card__card">
+                    <img
+                      className="card__image"
+                      src={card.image}
+                    ></img>
+                    <div>
+                      <div className="card__details">
+                        <h4 className="card__title">{card.title}</h4>
+                        <p className="card__price">{card.price}</p>
+                        <p className="card__address">{card.address}</p>
+                      </div>
+                      <div className="card__feature">
+                        <p className="card__bedroom">{card.facilities.bathrooms} Bathrooms</p>
+                        <p className="card__bathroom">{card.facilities.bedrooms} Bedrooms</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </article>
     </>
@@ -66,3 +45,15 @@ function Card() {
 
 export default Card;
 <></>;
+
+
+//using custom hook for the slider button 
+const SliderButtons = () => {
+    const swiper = useSwiper();
+    return(
+        <div className="sliderbuttons">
+            <button onClick={()=>swiper.slidePrev()}>Back</button>
+            <button onClick={()=>swiper.slideNext()}>Next</button>
+        </div>
+    )
+}
