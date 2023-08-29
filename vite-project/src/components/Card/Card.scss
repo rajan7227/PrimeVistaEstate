@@ -1,0 +1,61 @@
+.card {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 4rem 2rem 4rem;
+  background-color: #f2f5f5;;
+
+  &__main {
+    display: flex;
+    justify-content: space-around;
+  }
+  &__wrapper {
+    border-radius: 3px solid red;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.3);
+    &:hover{
+        -webkit-box-shadow: 0px 5px 10px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 5px 10px -1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 5px 10px -1px rgba(0, 0, 0, 0.75);
+    
+    }
+  }
+  &__details {
+    margin-left: 1rem;
+  }
+  &__title {
+    font-size: 0.8rem;
+  }
+  &__price {
+    font-size: 0.7rem;
+  }
+  &__address {
+    font-size: 0.7rem;
+  }
+  &__feature {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    align-items: center;
+    border-top: 0.7px solid grey;
+    p {
+      font-size: 0.7rem;
+    }
+  }
+  &__image {
+    width: 100%;
+    height: 200px;
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+}
+
+.sliderbuttons{
+    margin: 1rem 0 1rem 0 ;
+}
+
+.swiper-wrapper{
+    padding: 0.5rem;
+}

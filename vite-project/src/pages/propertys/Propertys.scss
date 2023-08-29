@@ -1,0 +1,61 @@
+.propertys {
+  &__wrapper {
+    padding: 0.8rem;
+    display: flex;
+    flex-grow: 1;
+  }
+  &__card {
+    margin: auto;
+    border: 1px solid #d1d0cf;
+    border-radius: 5px;
+    max-width: 80%;
+    display: flex;
+  }
+
+  &__image {
+    display: flex;
+    height: 100%;
+    width: 40%;
+    border-radius: 5px;
+    margin: 0.3rem;
+  }
+  &__details {
+
+    
+    &-title {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem;
+      width: 100%;
+    }
+    &-info{
+        padding: 0.5rem;
+    }
+    &-add{
+            background-color: lightgreen;
+    border-radius: 9px;
+    font-size: 0.8rem;
+    font-weight: 300;
+    text-align: center;
+    padding: 3px;
+    }
+    &-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        p{
+            font-size: 0.8rem;
+        }
+    }
+    &-spec{
+        display: flex;
+        gap: 1rem;
+    }
+    &-section{
+        display: flex;
+        flex-direction: column;
+    }
+
+  }
+}
