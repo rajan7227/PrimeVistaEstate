@@ -1,18 +1,17 @@
 import "./App.css";
-import Card from "./components/Card/Card";
-import Header from "./components/header/Header";
-import Hero from "./components/hero/Hero";
-import Slider from "./components/slider/Slider";
+import Homepage from "./pages/homepage/Homepage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Propertys from "./pages/propertys/Propertys";
 
 function App() {
-
-
   return (
     <div className="app">
-      <Header />
-      <Hero />
-      <Slider />
-      <Card />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/property" element={<Propertys />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
