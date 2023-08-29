@@ -1,6 +1,6 @@
 .propertys {
   &__wrapper {
-    padding: 2rem;
+    padding: 0.8rem;
     display: flex;
     flex-grow: 1;
   }
@@ -21,8 +21,7 @@
   }
   &__details {
 
-    &-wrapper{
-    }
+    
     &-title {
       display: flex;
       justify-content: space-between;
@@ -40,9 +39,6 @@
     text-align: center;
     padding: 3px;
     }
-        
-
-    
     &-info{
         display: flex;
         flex-direction: column;

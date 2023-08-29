@@ -1,4 +1,5 @@
 import "./header.scss";
+import { Link } from "react-router-dom"
 
 function Header() {
   return (
@@ -12,7 +13,7 @@ function Header() {
                 <a href="/">home</a>
               </li>
               <li className="header__properties">
-                <a href="/">properties</a>
+                <Link to="/property ">properties</Link>
               </li>
               <li className="header__contact">
                 <a href="/">Contact us</a>
