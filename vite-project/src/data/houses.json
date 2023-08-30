@@ -1,6 +1,6 @@
 [
     {
-      "_id": { "$oid": "64392d39dfd90fb29e464fb7" },
+      "id": "64392d39dfd90fb29e464fb7" ,
       "title": "Sunny Meadow Cottage",
       "description": "Massive opportunity to build your dream home at the base of Mummy Mountain in the 3 C's school district. Home is currently updated and very livable if your plans are to build at a later date.* Bonus * to live hillside without hillside restrictions in the town of PV. Run don't walk to capture this needle in a hay stack.",
       "price": 6000,
@@ -14,7 +14,7 @@
       "facilities": { "bathrooms": "2", "parking": "1", "bedrooms": "5" }
     },
     {
-      "_id": { "$oid": "64392e0bdfd90fb29e464fbc" },
+      "id":"64392e0bdfd90fb29e464fbc" ,
       "title": "Coastal Breeze Villa",
       "description": "Massive opportunity to build your dream home at the base of Mummy Mountain in the 3 C's school district. Home is currently updated and very livable if your plans are to build at a later date.* Bonus * to live hillside without hillside restrictions in the town of PV. Run don't walk to capture this needle in a hay stack.",
       "price": 8000,
@@ -28,7 +28,7 @@
       "updatedAt": { "$date": "2023-04-14T10:42:19.231Z" }
     },
     {
-      "_id": { "$oid": "6439001c74446601d6fce96d" },
+      "id":"6439001c74446601d6fce96d",
       "title": "Citralan Puri Serang",
       "description": "Massive opportunity to build your dream home at the base of Mummy Mountain in the 3 C's school district. Home is currently updated and very livable if your plans are to build at a later date.* Bonus * to live hillside without hillside restrictions in the town of PV. Run don't walk to capture this needle in a hay stack.",
       "price": 3000,
@@ -42,7 +42,7 @@
       "facilities": { "bathrooms": "3", "parking": "1", "bedrooms": "2" }
     },
     {
-      "_id": { "$oid": "64392e1edfd90fb29e464fbd" },
+      "id":"64392e1edfd90fb29e464fbd",
       "title": "Autumn Mist Cottage",
       "description": "Massive opportunity to build your dream home at the base of Mummy Mountain in the 3 C's school district. Home is currently updated and very livable if your plans are to build at a later date.* Bonus * to live hillside without hillside restrictions in the town of PV. Run don't walk to capture this needle in a hay stack.",
       "price": 3800,
@@ -56,7 +56,7 @@
       "updatedAt": { "$date": "2023-04-14T10:42:37.946Z" }
     },
     {
-      "_id": { "$oid": "64392d67dfd90fb29e464fb8" },
+      "id": "64392d67dfd90fb29e464fb8" ,
       "title": "Rustic Pine Lodge",
       "description": "Massive opportunity to build your dream home at the base of Mummy Mountain in the 3 C's school district. Home is currently updated and very livable if your plans are to build at a later date.* Bonus * to live hillside without hillside restrictions in the town of PV. Run don't walk to capture this needle in a hay stack.",
       "price": 7050,
@@ -70,7 +70,7 @@
       "facilities": { "bathrooms": "5", "parking": "1", "bedrooms": "4" }
     },
     {
-      "_id": { "$oid": "64392df2dfd90fb29e464fbb" },
+      "id": { "$oid": "64392df2dfd90fb29e464fbb" },
       "title": "Rolling Hills Retreat",
       "description": "Massive opportunity to build your dream home at the base of Mummy Mountain inthe 3 C's school district. Home is currently updated and very livable if your plans are to build at a later date.* Bonus * to live hillside without hillside restrictions in the town of PV. Run don't walk to capture this needle in a hay stack.",
       "price": 2000,
@@ -84,7 +84,7 @@
       "updatedAt": { "$date": "2023-04-14T10:41:54.156Z" }
     },
     {
-      "_id": { "$oid": "64392e32dfd90fb29e464fbe" },
+      "id":"64392e32dfd90fb29e464fbe",
       "title": "Riverstone Manor",
       "description": "Massive opportunity to build your dream home at the base of Mummy Mountain in the 3 C's school district. Home is currently updated and very livable if your plans are to build at a later date.* Bonus * to live hillside without hillside restrictions in the town of PV. Run don't walk to capture this needle in a hay stack.",
       "price": 2000,
@@ -98,7 +98,7 @@
       "updatedAt": { "$date": "2023-04-14T10:42:58.826Z" }
     },
     {
-      "_id": { "$oid": "64392e46dfd90fb29e464fbf" },
+      "id": "64392e46dfd90fb29e464fbf",
       "title": "Summerhill Estate",
       "description": "Massive opportunity to build your dream home at the base of Mummy Mountain in the 3 C's school district. Home is currently updated and very livable if your plans are to build at a later date.* Bonus * to live hillside without hillside restrictions in the town of PV. Run don't walk to capture this needle in a hay stack.",
       "price": 2000,
@@ -112,7 +112,7 @@
       "updatedAt": { "$date": "2023-04-14T10:43:18.186Z" }
     },
     {
-      "_id": { "$oid": "64392e57dfd90fb29e464fc0" },
+      "id": "64392e57dfd90fb29e464fc0",
       "title": "Crimson Peak Chalet",
       "description": "Massive opportunity to build your dream home at the base of Mummy Mountain in the 3 C's school district. Home is currently updated and very livable if your plans are to build at a later date.* Bonus * to live hillside without hillside restrictions in the town of PV. Run don't walk to capture this needle in a hay stack.",
       "price": 2000,
@@ -126,7 +126,7 @@
       "updatedAt": { "$date": "2023-04-14T10:43:35.761Z" }
     },
     {
-      "_id": { "$oid": "64392e69dfd90fb29e464fc1" },
+      "id": "64392e69dfd90fb29e464fc1",
       "title": "Cedar Ridge Ranch",
       "description": "Massive opportunity to build your dream home at the base of Mummy Mountain in the 3 C's school district. Home is currently updated and very livable if your plans are to build at a later date.* Bonus * to live hillside without hillside restrictions in the town of PV. Run don't walk to capture this needle in a hay stack.",
       "price": 2000,
@@ -140,7 +140,7 @@
       "updatedAt": { "$date": "2023-04-14T10:43:53.665Z" }
     },
     {
-      "_id": { "$oid": "643a30b60c4348510952923a" },
+      "id":"643a30b60c4348510952923a",
       "title": "Modern Marvel Mansion",
       "description": "Massive opportunity to build your dream home at the base of Mummy Mountain in the 3 C's school district. Home is currently updated and very livable if your plans are to build at a later date.* Bonus * to live hillside without hillside restrictions in the town of PV. Run don't walk to capture this needle in a hay stack.",
       "price": 2000,
@@ -154,7 +154,7 @@
       "updatedAt": { "$date": "2023-04-15T05:05:58.189Z" }
     },
     {
-      "_id": { "$oid": "643900fa74446601d6fce96e" },
+      "id": "643900fa74446601d6fce96e",
       "title": "Whispering Willow Estate",
       "description": "Massive opportunity to build your dream home at the base of Mummy Mountain in the 3 C's school district. Home is currently updated and very livable if your plans are to build at a later date.* Bonus * to live hillside without hillside restrictions in the town of PV. Run don't walk to capture this needle in a hay stack.",
       "price": 4000,
@@ -168,7 +168,7 @@
       "facilities": { "bathrooms": "4", "parking": "1", "bedrooms": "4" }
     },
     {
-      "_id": { "$oid": "6439011d74446601d6fce96f" },
+      "id": "6439011d74446601d6fce96f",
       "title": "Blue Horizon Manor",
       "description": "Massive opportunity to build your dream home at the base of Mummy Mountain in the 3 C's school district. Home is currently updated and very livable if your plans are to build at a later date.* Bonus * to live hillside without hillside restrictions in the town of PV. Run don't walk to capture this needle in a hay stack.",
       "price": 2500,
@@ -182,7 +182,7 @@
       "facilities": { "bathrooms": "2", "parking": "1", "bedrooms": "3" }
     },
     {
-      "_id": { "$oid": "64392ddddfd90fb29e464fba" },
+      "id": "64392ddddfd90fb29e464fba",
       "title": "Golden Fields Ranch",
       "description": "Massive opportunity to build your dream home at the base of Mummy Mountain in the 3 C's school district. Home is currently updated and very livable if your plans are to build at a later date.* Bonus * to live hillside without hillside restrictions in the town of PV. Run don't walk to capture this needle in a hay stack.",
       "price": 4000,
@@ -196,7 +196,7 @@
       "updatedAt": { "$date": "2023-04-14T10:41:32.998Z" }
     },
     {
-      "_id": { "$oid": "6438ffdd74446601d6fce96c" },
+      "id": "6438ffdd74446601d6fce96c",
       "title": "Asatti Garden City",
       "description": "Massive opportunity to build your dream home at the base of Mummy Mountain in the 3 C's school district. Home is currently updated and very livable if your plans are to build at a later date.* Bonus * to live hillside without hillside restrictions in the town of PV. Run don't walk to capture this needle in a hay stack.",
       "price": 2000,
