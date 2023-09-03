@@ -6,6 +6,13 @@
   padding: 2rem 4rem 2rem 4rem;
   background-color: #f2f5f5;;
 
+  &__like{
+    margin-left: 1rem;
+    position: absolute;
+    top: 30px;
+    right: 35px;
+    color: red;
+  }
   &__main {
     display: flex;
     justify-content: space-around;
