@@ -10,7 +10,6 @@ function validateLogin() {
             return false
         } else return true
     }
-
     return ( { validateLogn} );
 }
 

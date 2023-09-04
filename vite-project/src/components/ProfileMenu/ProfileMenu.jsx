@@ -12,10 +12,9 @@ function ProfileMenu({ user }, { logout }) {
           <Menu.Item>Favorites</Menu.Item>
           <Menu.Item>Bookings</Menu.Item>
           <Menu.Item
-            onClick={() => {
-              localStorage.clear();
-              logout({ returnTo: window.location.origin });
-            }}
+            onClick={() =>
+              logout({ logoutParams: { returnTo: window.location.origin } })
+            }
           >
             Logout
           </Menu.Item>

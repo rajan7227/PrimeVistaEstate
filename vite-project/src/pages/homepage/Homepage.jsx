@@ -6,7 +6,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useContext, useEffect } from "react";
 import userDetailContext from "../../components/context/Context";
 import { useMutation } from "react-query";
-import { createHashRouter } from "react-router-dom";
 import axios from "axios";
 
 function Homepage() {
@@ -15,23 +14,23 @@ function Homepage() {
 
   const { mutate } = useMutation({
     mutationKey: [user?.email],
-    mutationFn: () => createUser(user?.email),
+    mutationFn: (token) => createUser(user?.email),
   });
-
-  // const getTokenAndRegister = async () => {
-  //   const response = await getAccessTokenWithPopup({
-  //     authorizationParams: {
-  //       audience: "http://localhost:9090",
-  //       scope: "openid profile email",
-  //     },
-  //   });
-  //   console.log(response);
-  //   localStorage.setItem("access_token", response);
-  //   setUserDetails((prev) => ({ ...prev, token: response }));
-    
-  // };
-
+  
   useEffect(() => {
+
+    const getAccessTokeAndRegister =  async () =>{
+      const res = await getAccessTokenWithPopup({
+        authorizationParams: {
+          audience: "http://localhost:9090",
+          scope: "openid profile email"
+        },
+      });
+      localStorage.setItem("access_token", res)
+      setUserDetails((prev)=>({...prev, token: res}))
+      console.log(res)
+      
+      }
 
     if (isAuthenticated) {
       axios
@@ -41,6 +40,7 @@ function Homepage() {
         })
         .catch();
     }
+    isAuthenticated && getAccessTokeAndRegister()
   }, [isAuthenticated]);
 
   return (

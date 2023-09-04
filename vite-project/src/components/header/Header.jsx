@@ -4,7 +4,9 @@ import { useAuth0 } from "@auth0/auth0-react"
 import ProfileMenu from "../ProfileMenu/ProfileMenu";
 
 function Header() {
-  const { loginWithRedirect, isAuthenticated, user, logout } = useAuth0();
+  const { loginWithRedirect, isAuthenticated, user  } = useAuth0();
+  const { logout } = useAuth0();
+  
 
   return (
     <>
@@ -29,6 +31,10 @@ function Header() {
                   <ProfileMenu  user={user} logout={logout}/>
                 )}
               </li>
+              <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
+      Log Out
+    </button>
+              
             </ul>
           </nav>
         </div>

@@ -6,9 +6,11 @@ import React, { useEffect, useState } from "react";
 import "./Property.scss";
 import axios from "axios";
 import validateLogin from "../../hooks/validateLogin";
+import { useAuth0 } from "@auth0/auth0-react";
+import BookingModal from "../../BookingModal/BookingModal";
 
 function Property() {
-  const [modelOpned, setModelOpned] = useState(false);
+  const [modalOpened, setModelOpened] = useState(false);
   const { validateLogn } = validateLogin();
 
   const { id } = useParams();
@@ -23,6 +25,7 @@ function Property() {
         console.error("error", error);
       });
   }, [setSelectedHouse]);
+  const { user } = useAuth0();
 
   //const selectedHouse = houses.find((house)=>house.id === id);
   return (
@@ -52,13 +55,18 @@ function Property() {
           <p className="property-address">Address: {selectedHouse.address}</p>
           <button
             onClick={() => {
-              validateLogn() && setModelOpned(true);
+              validateLogn() && setModelOpened(true);
             }}
           >
-            ADD PROPERTY
+            BOOK TOUR
           </button>
-          
         </div>
+        <BookingModal
+          opened={modalOpened}
+          setOpened={setModelOpened}
+          propertyId={id}
+          email={user?.email}
+        />
         <Map
           address={selectedHouse?.address}
           city={selectedHouse?.city}
