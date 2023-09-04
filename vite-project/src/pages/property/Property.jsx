@@ -64,7 +64,7 @@ function Property() {
         <BookingModal
           opened={modalOpened}
           setOpened={setModelOpened}
-          propertyId={id}
+          id={id}
           email={user?.email}
         />
         <Map

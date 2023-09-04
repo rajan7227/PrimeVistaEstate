@@ -4,18 +4,19 @@ import Slider from "../../components/slider/Slider";
 import Card from "../../components/Card/Card";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useContext, useEffect } from "react";
-import userDetailContext from "../../components/context/Context";
-import { useMutation } from "react-query";
+import { UserDetailContext } from "../../components/context/Context";
+
 import axios from "axios";
 
 function Homepage() {
   const { isAuthenticated, user, getAccessTokenWithPopup } = useAuth0();
-  const { setUserDetails } = useContext(userDetailContext);
+  const  { loggedInUser }  = useContext(UserDetailContext);
+  console.log(loggedInUser)
 
-  const { mutate } = useMutation({
-    mutationKey: [user?.email],
-    mutationFn: (token) => createUser(user?.email),
-  });
+  // const { mutate } = useMutation({
+  //   mutationKey: [user?.email],
+  //   mutationFn: (token) => createUser(user?.email),
+  // });
   
   useEffect(() => {
     const getAccessTokenAndRegister = async () => {
@@ -27,7 +28,7 @@ function Homepage() {
           },
         });
         localStorage.setItem("access_token", res);
-        //setUserDetails((prev) => ({ ...prev, token: res }));
+        setUserDetail((prev) => ({ ...prev, token: res }));
         console.log(res)
          mutate(res)
       } catch (error) {
@@ -39,7 +40,7 @@ function Homepage() {
       axios
         .post("http://localhost:9090/user/signup", { email: user.email }, {
           headers: {
-            Authorization: `Bearer `,
+            Authorization: `Bearer  ${loggedInUser}`,
           }})
         .then((response) => {
           console.log(response.data);

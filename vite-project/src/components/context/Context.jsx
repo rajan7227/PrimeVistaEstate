@@ -1,4 +1,19 @@
-import { createContext } from "react";
-const userDetailContext = createContext();
+import { createContext, useEffect, useState } from "react";
+ export const UserDetailContext = createContext();
 
-export default userDetailContext;
+
+
+export const UserDetailContextProvider = ({ children }) => {
+    const [user, setUser] = useState({loggedInUser:null});
+
+    useEffect(()=>{
+        const userToken = localStorage.getItem("access_token")
+        if(userToken){
+            setUser({loggedInUser:userToken})
+        }
+    },[])
+
+  return <UserDetailContext.Provider value={user}>
+    {children}
+  </UserDetailContext.Provider>;
+};

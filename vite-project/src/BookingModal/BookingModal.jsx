@@ -2,17 +2,24 @@ import React, { useContext, useState } from "react";
 import { Modal, Button } from "@mantine/core";
 import { DatePicker } from "@mantine/dates"
 import './BookingModal.scss';
-import userDetailContext from "../components/context/Context";
+import { UserDetailContext } from "../components/context/Context";
 
 
-function BookingModal({ opened, setOpened, email, propertyId }) {
+function BookingModal({ opened, setOpened, email, id }) {
 
     const [value , setValue] = useState(null)
-    const { userDetails: token } = useContext(userDetailContext)
+    
 
-    const {mutate, isLoading} = useMutation({
-        mutationFn: () => bookVisit(value, propertyId, email, token)
-    })
+    const  { loggedInUser }  = useContext(UserDetailContext);
+
+  function handleBook (){
+    console.log(email,id,value);
+  }
+    //const { userDetails: token } = useContext(UserDetailContext)
+
+    // const {mutate, isLoading} = useMutation({
+    //     mutationFn: () => bookVisit(value, propertyId, email, token)
+    // })
   return (
     <Modal
     opened={opened}
@@ -22,7 +29,7 @@ function BookingModal({ opened, setOpened, email, propertyId }) {
     >
         <div className="calender">
             <DatePicker value={value} onChange={setValue} minDate={new Date()}/>
-            <Button disabled={!value} onClick={()=>mutate()} className="calender__button">Book visit</Button>
+            <Button disabled={!value} onClick={()=>handleBook()}>Book visit</Button>
         </div>
 
     </Modal>

@@ -4,23 +4,21 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Propertys from "./pages/propertys/Propertys";
 import Property from "./pages/property/Property";
 import { useState } from "react";
-import userDetailContext from "./components/context/Context";
+import { UserDetailContextProvider } from "./components/context/Context";
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
-
+import { useContext } from "react";
+import { UserDetailContext }  from "./components/context/Context";
 
 const queryClient = new QueryClient()
 
 function App() {
-  const [userDetail, setUserDetail] = useState({
-    favrites:[],
-    booking: [],
-    token:[] 
-  });
+  // const context = useContext(UserDetailContext);
+  // console.log(context);
 
 
   return (
     <div className="app">
-      <userDetailContext.Provider value={{userDetail, setUserDetail}}>
+     <UserDetailContextProvider >
       <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Routes>
@@ -30,7 +28,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       </QueryClientProvider>
-      </userDetailContext.Provider>
+      </UserDetailContextProvider>
     </div>
   );
 }
