@@ -28,7 +28,7 @@ function BookingModal({ opened, setOpened, email, id }) {
         console.error("Error sending POST request", error);
       }
     } else {
-      console.alert("Please login to continue");
+      alert("Please login to continue");
     }
   }
 
