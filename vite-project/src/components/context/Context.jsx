@@ -1,8 +1,6 @@
 import { createContext, useEffect, useState } from "react";
  export const UserDetailContext = createContext();
 
-
-
 export const UserDetailContextProvider = ({ children }) => {
     const [user, setUser] = useState({loggedInUser:null});
 

@@ -13,11 +13,7 @@ function Homepage() {
   const  { loggedInUser }  = useContext(UserDetailContext);
   console.log(loggedInUser)
 
-  // const { mutate } = useMutation({
-  //   mutationKey: [user?.email],
-  //   mutationFn: (token) => createUser(user?.email),
-  // });
-  
+
   useEffect(() => {
     const getAccessTokenAndRegister = async () => {
       try {
