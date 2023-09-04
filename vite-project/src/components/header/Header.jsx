@@ -1,10 +1,11 @@
 import "./header.scss";
-import { Link } from "react-router-dom"
-import { useAuth0 } from "@auth0/auth0-react"
+import { Link } from "react-router-dom";
 import ProfileMenu from "../ProfileMenu/ProfileMenu";
+import { useAuth0 } from "@auth0/auth0-react";
+import axios from 'axios'
 
 function Header() {
-  const { loginWithRedirect, isAuthenticated, user  } = useAuth0();
+  const { loginWithRedirect, isAuthenticated, user } = useAuth0();
   const { logout } = useAuth0();
   
 
@@ -25,16 +26,20 @@ function Header() {
                 <a href="/">Contact us</a>
               </li>
               <li>
-                {
-                  !isAuthenticated ? (
-                  <button onClick={loginWithRedirect}>LOGIN</button>):(
-                  <ProfileMenu  user={user} logout={logout}/>
+                {!isAuthenticated ? (
+                  <button onClick={loginWithRedirect}>LOGIN</button>
+                ) : (
+                  <ProfileMenu user={user} logout={logout} />
                 )}
               </li>
-              <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
-      Log Out
-    </button>
-              
+              <button
+                onClick={() =>
+                  logout({ logoutParams: { returnTo: window.location.origin } })
+                }
+              >
+                Log Out
+              </button>
+              <button onClick={() => fetchAccessToken()}>Get access</button>
             </ul>
           </nav>
         </div>

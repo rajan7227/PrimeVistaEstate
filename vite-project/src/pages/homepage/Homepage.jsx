@@ -18,29 +18,37 @@ function Homepage() {
   });
   
   useEffect(() => {
-
-    const getAccessTokeAndRegister =  async () =>{
-      const res = await getAccessTokenWithPopup({
-        authorizationParams: {
-          audience: "http://localhost:9090",
-          scope: "openid profile email"
-        },
-      });
-      localStorage.setItem("access_token", res)
-      setUserDetails((prev)=>({...prev, token: res}))
-      console.log(res)
-      
+    const getAccessTokenAndRegister = async () => {
+      try {
+        const res = await getAccessTokenWithPopup({
+          authorizationParams: {
+            audience: "https://dev-l6.uk.auth0.com/api/v2/",
+            scope: "openid profile email"
+          },
+        });
+        localStorage.setItem("access_token", res);
+        //setUserDetails((prev) => ({ ...prev, token: res }));
+        console.log(res)
+         mutate(res)
+      } catch (error) {
+        console.error("Error getting access token:", error);
       }
-
+    };
+  
     if (isAuthenticated) {
       axios
-        .post("http://localhost:9090/user/signup", { email: user.email })
+        .post("http://localhost:9090/user/signup", { email: user.email }, {
+          headers: {
+            Authorization: `Bearer `,
+          }})
         .then((response) => {
           console.log(response.data);
         })
-        .catch();
+        .catch((error) => {
+          console.error("Error registering user:", error);
+        });
     }
-    isAuthenticated && getAccessTokeAndRegister()
+    isAuthenticated && getAccessTokenAndRegister();
   }, [isAuthenticated]);
 
   return (
