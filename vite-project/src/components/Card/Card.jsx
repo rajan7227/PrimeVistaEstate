@@ -17,7 +17,7 @@ function Card() {
         setProperty(response.data);
       })
       .catch((error) => {
-        console.error("Error:", error);
+        console.log("Error:", error);
       });
   }, [setProperty]);
 

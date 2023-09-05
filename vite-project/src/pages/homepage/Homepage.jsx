@@ -7,11 +7,14 @@ import { useContext, useEffect } from "react";
 import { UserDetailContext } from "../../components/context/Context";
 
 import axios from "axios";
+import useFavorites from "../../hooks/useFavorites";
 
 function Homepage() {
+
+  useFavorites();
   const { isAuthenticated, user, getAccessTokenWithPopup } = useAuth0();
   const  { loggedInUser }  = useContext(UserDetailContext);
-  console.log(loggedInUser)
+  // console.log(loggedInUser)
 
 
   useEffect(() => {
@@ -25,10 +28,10 @@ function Homepage() {
         });
         localStorage.setItem("access_token", res);
         setUserDetail((prev) => ({ ...prev, token: res }));
-        console.log(res)
+        // console.log(res)
          mutate(res)
       } catch (error) {
-        console.error("Error getting access token:", error);
+        console.log("Error getting access token:", error);
       }
     };
   
@@ -42,7 +45,7 @@ function Homepage() {
           console.log(response.data);
         })
         .catch((error) => {
-          console.error("Error registering user:", error);
+          console.log("Error registering user:", error);
         });
     }
     isAuthenticated && getAccessTokenAndRegister();

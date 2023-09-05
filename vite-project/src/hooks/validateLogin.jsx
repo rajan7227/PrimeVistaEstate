@@ -6,7 +6,7 @@ function validateLogin() {
     const {isAuthenticated} = useAuth0();
     const validateLogn = () =>{
         if (!isAuthenticated){
-            console.alert("please login to continue")
+            alert("please login to continue")
             return false
         } else return true
     }
