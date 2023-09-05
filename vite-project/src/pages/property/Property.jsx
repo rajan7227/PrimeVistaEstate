@@ -8,6 +8,8 @@ import axios from "axios";
 import validateLogin from "../../hooks/validateLogin";
 import { useAuth0 } from "@auth0/auth0-react";
 import BookingModal from "../../BookingModal/BookingModal";
+import Heart from "../../components/Heart/Heart";
+import {AiFillHeart} from 'react-icons/ai';
 
 function Property() {
   const [modalOpened, setModelOpened] = useState(false);
@@ -22,7 +24,7 @@ function Property() {
         setSelectedHouse(response.data);
       })
       .catch((error) => {
-        console.error("error", error);
+        console.log("error", error);
       });
   }, [setSelectedHouse]);
   const { user } = useAuth0();
@@ -42,6 +44,8 @@ function Property() {
           <p className="property-price">
             ${selectedHouse.price?.toLocaleString()}
           </p>
+          <p>{selectedHouse.id}</p>
+          <Heart id={id}/>
           <p className="property-description">{selectedHouse.description}.</p>
           <div className="property-info">
             <span className="property-info-item">

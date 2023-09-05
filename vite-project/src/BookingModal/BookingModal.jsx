@@ -12,24 +12,25 @@ function BookingModal({ opened, setOpened, email, id }) {
   async function handleBook() {
     
       const formattedDate = dayjs(value).format("DD/MM/YYYY")
+      console.log( email, id, formattedDate)
 
-    if (loggedInUser) {
-      try {
-        const apiUrl = `http://localhost:9090/user/bookvisit/${id}`;
+    // if (loggedInUser) {
+    //   try {
+    //     const apiUrl = `http://localhost:9090/user/bookvisit/${id}`;
 
-        const response = await axios.post(
-          apiUrl,
-          { email : email, 
-           date :  formattedDate}
-        );
-        console.log("POST Request Successful", response.data);
-        // Handle the response as needed
-      } catch (error) {
-        console.error("Error sending POST request", error);
-      }
-    } else {
-      alert("Please login to continue");
-    }
+    //     const response = await axios.post(
+    //       apiUrl,
+    //       { email : email, 
+    //        date :  formattedDate}
+    //     );
+    //     console.log("POST Request Successful", response.data);
+    //     // Handle the response as needed
+    //   } catch (error) {
+    //     console.error("Error sending POST request", error);
+    //   }
+    // } else {
+    //   alert("Please login to continue");
+    // }
   }
 
   return (

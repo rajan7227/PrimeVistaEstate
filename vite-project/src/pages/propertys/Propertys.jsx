@@ -3,9 +3,9 @@ import "./Propertys.scss";
 import houses from "../../data/houses.json";
 import { Link } from "react-router-dom";
 import SearchBar from "../../components/searchBar/SearchBar";
-import { AiFillHeart } from "react-icons/ai";
 import axios from 'axios'
 import { useEffect, useState } from "react";
+import Heart from "../../components/Heart/Heart";
 
 
 
@@ -18,7 +18,7 @@ function Propertys() {
         setProperty(response.data);
       })
       .catch((error) => {
-        console.error('Error:', error);
+        console.log('Error:', error);
       });
   }, [setProperty]);
 
@@ -41,7 +41,7 @@ function Propertys() {
                     <div className="propertys__details-wrapper">
                       <div className="propertys__details-title">
                         <p className="propertys__details-add">Just Added</p>
-                        <AiFillHeart size={30} />
+                        <Heart id={house.id}/>
                         <p className="propertys__details-save">Save</p>
                       </div>
                       <div className="propertys__details-info">
