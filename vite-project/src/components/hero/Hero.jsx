@@ -1,3 +1,4 @@
+import SearchBar from "../searchBar/SearchBar";
 import "./Hero.scss";
 
 function Hero() {
@@ -7,8 +8,7 @@ function Hero() {
         <div className="hero__wrapper">
           <div>
             <h2>Find Accessible Homes To Buy</h2>
-            <input placeholder="Search"></input>
-            <button>Search</button>
+            <SearchBar />
           </div>
           <div>
             <div className="hero__image"></div>

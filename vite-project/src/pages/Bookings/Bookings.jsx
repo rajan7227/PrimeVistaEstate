@@ -1,14 +1,19 @@
 import Header from "../../components/header/Header";
-import "./propertys.scss";
+import "./Bookings.scss";
 import { Link } from "react-router-dom";
 import SearchBar from "../../components/searchBar/SearchBar";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Heart from "../../components/Heart/Heart";
+import AllDetails from "../../components/context/AllDetails";
 
-function Propertys() {
+function Bookings() {
   const [property, setProperty] = useState([]);
   const [filter, setFilter] = useState("");
+  const {
+    allDeatils: { bookings },
+  } = useContext(AllDetails);
+
   useEffect(() => {
     axios
       .get("http://localhost:9090/property")
@@ -30,9 +35,13 @@ function Propertys() {
       />
       {property
         .filter((property) =>
-          property.title.toLowerCase().includes(filter.toLowerCase()) ||
-          property.city.toLowerCase().includes(filter.toLowerCase()) ||
-          property.country.toLowerCase().includes(filter.toLowerCase())
+          bookings.map((booking) => booking.id).includes(property.id)
+        )
+        .filter(
+          (property) =>
+            property.title.toLowerCase().includes(filter.toLowerCase()) ||
+            property.city.toLowerCase().includes(filter.toLowerCase()) ||
+            property.country.toLowerCase().includes(filter.toLowerCase())
         )
         .map((house, i) => (
           <section className="propertys" key={i}>
@@ -84,4 +93,4 @@ function Propertys() {
   );
 }
 
-export default Propertys;
+export default Bookings;
