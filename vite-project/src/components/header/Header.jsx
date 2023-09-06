@@ -3,10 +3,24 @@ import { Link } from "react-router-dom";
 import ProfileMenu from "../ProfileMenu/ProfileMenu";
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from 'axios'
+import AddPropertyModal from "../AddPropertyModal/AddPropertyModal";
+import { useState } from "react";
+import useAuthCheck from "../../hooks/useAuthCheck";
+import { toast } from "react-toastify";
 
 function Header() {
+  const [modalOpened, setModalOpened] = useState(false);
   const { loginWithRedirect, isAuthenticated, user } = useAuth0();
   const { logout } = useAuth0();
+  const { validateLogin } = useAuthCheck();
+
+  const handleAddPropertyClick = () => {
+    console.log("clicked")
+    if(isAuthenticated){
+      setModalOpened(true);
+    }
+    
+  }
   
 
   return (
@@ -39,7 +53,8 @@ function Header() {
               >
                 Log Out
               </button>
-              <button onClick={() => fetchAccessToken()}>Get access</button>
+              <div onClick={()=>handleAddPropertyClick()}>Add Property</div>
+              <AddPropertyModal opened={modalOpened} setOpened={setModalOpened}/>
             </ul>
           </nav>
         </div>
