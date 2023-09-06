@@ -9,6 +9,7 @@ import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 import { useContext } from "react";
 import { UserDetailContext } from "./components/context/Context";
 import AllDetails from "./components/context/AllDetails";
+import Bookings from "./pages/Bookings/Bookings";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ function App() {
                 <Route path="/" element={<Homepage />} />
                 <Route path="/property" element={<Propertys />} />
                 <Route path="/property/:id" element={<Property />} />
+                <Route path="/bookings" element={<Bookings />} />
               </Routes>
             </BrowserRouter>
           </QueryClientProvider>
