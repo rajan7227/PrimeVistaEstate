@@ -66,7 +66,7 @@ function AddLocation({ propertyDetails, setPropertyDetails, nextStep }) {
         </div>
 
         <Group>
-            <button type="submit" className="input__button">Next Step</button>
+            <button type="submit" className="input__button">Next</button>
         </Group>
       </div>
     </form>

@@ -6,10 +6,10 @@ export const sliderSettings = {
       slidesPerView: 1,
     },
     600: {
-      slidesPerView: 2,
+      slidesPerView: 1,
     },
     750: {
-      slidesPerView: 3,
+      slidesPerView: 2,
     },
     1100: {
       slidesPerView: 3,

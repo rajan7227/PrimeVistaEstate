@@ -9,7 +9,10 @@ import validateLogin from "../../hooks/validateLogin";
 import { useAuth0 } from "@auth0/auth0-react";
 import BookingModal from "../../BookingModal/BookingModal";
 import Heart from "../../components/Heart/Heart";
-import {AiFillHeart} from 'react-icons/ai';
+import { AiFillHeart } from "react-icons/ai";
+import bedIcon from "../../assets/bedroom.png";
+import bathroomIcon from "../../assets/bathroom.png";
+import sqftIcon from "../../assets/sqft.png";
 
 function Property() {
   const [modalOpened, setModelOpened] = useState(false);
@@ -38,26 +41,52 @@ function Property() {
           className="property-image"
           src={selectedHouse.image}
           alt="Property Image"
+          width={"100%"}
+          height={"40vh"}
         ></img>
         <div className="property-details">
           <h1 className="property-title">{selectedHouse.title}</h1>
           <p className="property-price">
             ${selectedHouse.price?.toLocaleString()}
           </p>
-          <p>{selectedHouse.id}</p>
-          <Heart id={id}/>
+          {/* <Heart id={id} /> */}
           <p className="property-description">{selectedHouse.description}.</p>
           <div className="property-info">
             <span className="property-info-item">
-              Bathrooms: {selectedHouse.facilities?.bathrooms}
+              <img
+                className="icon"
+                src={bathroomIcon}
+                alt="bed icon"
+                width={"24px"}
+                height={"24px"}
+              />
+              : {selectedHouse.facilities?.bathrooms}
             </span>
-            <span className="property-info-item">Parking: 2</span>
             <span className="property-info-item">
-              Bedrooms: {selectedHouse.facilities?.bedrooms}
+              {" "}
+              <img
+                className="icon"
+                src={bedIcon}
+                alt="bed icon"
+                width={"24px"}
+                height={"24px"}
+              />
+              : {selectedHouse.facilities?.bedrooms}
+            </span>
+            <span className="property-info-item">
+              {" "}
+              <img
+                className="icon"
+                src={sqftIcon}
+                alt="bed icon"
+                width={"24px"}
+                height={"24px"}
+              />
+              : {selectedHouse.facilities?.sqft} sqft
             </span>
           </div>
-          <p className="property-address">Address: {selectedHouse.address}</p>
-          <button
+          <p className="property-address"> <b>Address:</b>  {selectedHouse.address}</p>
+          <button className="property__booktour"
             onClick={() => {
               validateLogn() && setModelOpened(true);
             }}

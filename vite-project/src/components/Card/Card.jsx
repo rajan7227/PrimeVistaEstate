@@ -1,8 +1,8 @@
 import "./Card.scss";
 import "swiper/css";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import bedIcon from "../../assets/bed.svg";
-import bathroomIcon from "../../assets/bathroom.svg";
+import bedIcon from "../../assets/bedroom.png";
+import bathroomIcon from "../../assets/bathroom.png";
 import React from "react";
 import { sliderSettings } from "../../utils/slidersetting";
 import { AiFillHeart } from "react-icons/ai";
@@ -27,18 +27,19 @@ function Card() {
       <section className="card">
         <div className="card__wrapper">
           <div className="card__context">
-            <p className="card__title">CHECKOUT OUR NEW</p>
-            <h2 className="card__head">Latest Listed Properties</h2>
-            <p className="card__paragraph">
-              Donec porttitor euismod dignissim. Nullam a lacinia ipsum, nec
-              dignissim purus.
-            </p>
+            <div>
+              <p className="card__title">CHECKOUT OUR NEW</p>
+              <h2 className="card__head">Latest Listed Properties</h2>
+              <p className="card__paragraph">
+              We're thrilled to showcase our most recent property listings, each with its unique charm and potential.
+              </p>
+            </div>
           </div>
           <div className="card__houses">
-            <div> 
+            <div>
               <div className="card_houses-wrapper">
                 <Swiper {...sliderSettings}>
-                <SliderButtons />
+                  <SliderButtons />
                   {property.slice(0, 8).map((card, i) => (
                     <SwiperSlide key={i} className="one">
                       <div className="card__houses-cardwrapper">
@@ -64,6 +65,8 @@ function Card() {
                                       className="card__bedicon"
                                       src={bedIcon}
                                       alt="bed icon"
+                                      width={"24px"}
+                                      height={"24px"}
                                     />
                                     <p className="card__bedrooms">
                                       {card.facilities.bedrooms} Beds
@@ -74,6 +77,8 @@ function Card() {
                                       className="card__"
                                       src={bathroomIcon}
                                       alt="bathroom icon"
+                                      width={"24px"}
+                                      height={"24px"}
                                     />
                                     <p className="card__bathrooms">
                                       {card.facilities.bathrooms} Bath
@@ -105,8 +110,18 @@ const SliderButtons = () => {
   const swiper = useSwiper();
   return (
     <div className="sliderbuttons">
-      <button className="button button-default" onClick={() => swiper.slidePrev()}>Back</button>
-      <button className="button button-default" onClick={() => swiper.slideNext()}>Next</button>
+      <button
+        className="button button-default"
+        onClick={() => swiper.slidePrev()}
+      >
+        Back
+      </button>
+      <button
+        className="button button-default"
+        onClick={() => swiper.slideNext()}
+      >
+        Next
+      </button>
     </div>
   );
 };

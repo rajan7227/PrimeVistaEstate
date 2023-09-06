@@ -28,15 +28,15 @@ function Header() {
         <div className="header__wrapper">
           <div className="header__nav">
             <ul className="header__ul">
-              <li className="header__li">Home</li>
+              <li className="header__li"><Link to="/">Home</Link></li>
               <li className="header__li"><Link to="/property ">Listings</Link></li>
-              <li className="header__li"> <a href="/">About us</a></li>
+              <li className="header__li"> <Link to="/" >About us</Link></li>
             </ul>
           </div>
           <div className="header__logo">
             <div className="header__logowrapper">
               <img className="header__logosvg" src={logo}></img>
-              <h1 className="header__logoname">PrimeVista</h1>
+              <h1 className="header__logoname"> <Link to="/">PrimeVista</Link></h1>
             </div>
           </div>
           <div className="header__account">
@@ -47,13 +47,12 @@ function Header() {
                 ) : (
                   <ProfileMenu user={user} logout={logout} />
                 )}</li>
-              <li className="header__register">Register</li>
               <li><button className="header__logout"
                 onClick={() =>
                   logout({ logoutParams: { returnTo: window.location.origin } })
                 }
               >
-                Log Out
+                /Log Out
               </button></li>
               <li className="header__addproperty">
                 <img
