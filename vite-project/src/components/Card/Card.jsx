@@ -1,7 +1,8 @@
 import "./Card.scss";
 import "swiper/css";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import houses from "../../data/houses.json";
+import bedIcon from "../../assets/bed.svg";
+import bathroomIcon from "../../assets/bathroom.svg";
 import React from "react";
 import { sliderSettings } from "../../utils/slidersetting";
 import { AiFillHeart } from "react-icons/ai";
@@ -23,38 +24,75 @@ function Card() {
 
   return (
     <>
-      <article>
-        <div className="card">
-          <Swiper {...sliderSettings}>
-            <SliderButtons />
-            {property.slice(0,8).map((card, i) => (
-              <SwiperSlide key={i} className="one">
-                <div className="card__wrapper">
-                  <div className="card__card">
-                    <AiFillHeart size={30} className="card__like" />
-                    <img className="card__image" src={card.image}></img>
-                    <div>
-                      <div className="card__details">
-                        <h4 className="card__title">{card.title}</h4>
-                        <p className="card__price">{card.price}</p>
-                        <p className="card__address">{card.address}</p>
+      <section className="card">
+        <div className="card__wrapper">
+          <div className="card__context">
+            <p className="card__title">CHECKOUT OUR NEW</p>
+            <h2 className="card__head">Latest Listed Properties</h2>
+            <p className="card__paragraph">
+              Donec porttitor euismod dignissim. Nullam a lacinia ipsum, nec
+              dignissim purus.
+            </p>
+          </div>
+          <div className="card__houses">
+            <div> 
+              <div className="card_houses-wrapper">
+                <Swiper {...sliderSettings}>
+                <SliderButtons />
+                  {property.slice(0, 8).map((card, i) => (
+                    <SwiperSlide key={i} className="one">
+                      <div className="card__houses-cardwrapper">
+                        <div className="card__card">
+                          {/* <AiFillHeart size={30} className="card__like" /> */}
+                          <img
+                            className="card__image"
+                            src={card.image}
+                            width={"440px"}
+                            height={"340px"}
+                          ></img>
+                          <div>
+                            <div className="card__details">
+                              <h3 className="card__price">£ {card.price}</h3>
+                              <h4 className="card__house-title">
+                                {card.title}
+                              </h4>
+                              <p className="card__address">{card.address}</p>
+                              <div>
+                                <div className="card__feature">
+                                  <div className="card__bed">
+                                    <img
+                                      className="card__bedicon"
+                                      src={bedIcon}
+                                      alt="bed icon"
+                                    />
+                                    <p className="card__bedrooms">
+                                      {card.facilities.bedrooms} Beds
+                                    </p>
+                                  </div>
+                                  <div className="card__bath">
+                                    <img
+                                      className="card__"
+                                      src={bathroomIcon}
+                                      alt="bathroom icon"
+                                    />
+                                    <p className="card__bathrooms">
+                                      {card.facilities.bathrooms} Bath
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <div className="card__feature">
-                        <p className="card__bedroom">
-                          {card.facilities.bathrooms} Bathrooms
-                        </p>
-                        <p className="card__bathroom">
-                          {card.facilities.bedrooms} Bedrooms
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+            </div>
+          </div>
         </div>
-      </article>
+      </section>
     </>
   );
 }
@@ -67,8 +105,8 @@ const SliderButtons = () => {
   const swiper = useSwiper();
   return (
     <div className="sliderbuttons">
-      <button onClick={() => swiper.slidePrev()}>Back</button>
-      <button onClick={() => swiper.slideNext()}>Next</button>
+      <button className="button button-default" onClick={() => swiper.slidePrev()}>Back</button>
+      <button className="button button-default" onClick={() => swiper.slideNext()}>Next</button>
     </div>
   );
 };
