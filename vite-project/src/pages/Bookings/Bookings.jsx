@@ -6,17 +6,23 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import Heart from "../../components/Heart/Heart";
 import AllDetails from "../../components/context/AllDetails";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function Bookings() {
   const [property, setProperty] = useState([]);
+
   const [filter, setFilter] = useState("");
   const {
     allDeatils: { bookings },
   } = useContext(AllDetails);
+  const { user } = useAuth0();
 
   useEffect(() => {
+    console.log("access bookings");
+    console.log(user?.email);
+
     axios
-      .get("http://localhost:9090/property")
+      .post("http://localhost:9090/user/bookings", { email: user?.email })
       .then((response) => {
         setProperty(response.data);
       })
@@ -34,14 +40,12 @@ function Bookings() {
         className="propertys__search"
       />
       {property
-        .filter((property) =>
-          bookings.map((booking) => booking.id).includes(property.id)
+        .filter((propertys) =>
+          bookings.map((booking) => booking.id).includes(propertys.id)
         )
         .filter(
-          (property) =>
-            property.title.toLowerCase().includes(filter.toLowerCase()) ||
-            property.city.toLowerCase().includes(filter.toLowerCase()) ||
-            property.country.toLowerCase().includes(filter.toLowerCase())
+          (propertys) =>
+            propertys.title.toLowerCase().includes(filter.toLowerCase())
         )
         .map((house, i) => (
           <section className="propertys" key={i}>
