@@ -80,7 +80,7 @@ function Propertys() {
                               {house.title}
                             </h6>
                             <p className="property__address">{house.address}</p>
-                            <p className="property__description">Description</p>
+                            <p className="property__description">{house.description}</p>
                           </section>
                         </div>
                       </div>

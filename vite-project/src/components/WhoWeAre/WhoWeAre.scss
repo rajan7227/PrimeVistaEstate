@@ -1,10 +1,16 @@
+@import '../../../partials/mixins';
 .who {
   &__wrapper {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     margin: 3rem;
-    gap: 10rem;
+    
+    @include desktop{
+        flex-direction: row;
+        gap: 10rem;
+    }
   }
   &__context {
     * {
@@ -25,25 +31,38 @@
     color: var(--Text-Colour-2, #2b2b2b);
     max-width: 500px;
     /* H2 - Semi Bold */
-    font-size: 39.8px;
+    font-size: 27px;
+   
     font-style: normal;
     font-weight: 600;
     line-height: 47px;
+
+    @include tablet {
+      font-size: 32px;
+    }
+    @include desktop{
+       font-size: 39.8px;
+    }
   }
   &__paragraph {
     color: var(--Text-Colour-3, #808080);
     max-width: 500px;
 
     /* Paragraph - Regular */
-    font-size: 16px;
+    font-size: 13px;
     font-style: normal;
     font-weight: 400;
     line-height: 26px; /* 162.5% */
+    @include tablet{ font-size: 16px;}
+    @include desktop{}
   }
   &__image {
     position: relative;
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 1rem;
+    max-width: 800px;
 
     img {
       border-radius: 30px;

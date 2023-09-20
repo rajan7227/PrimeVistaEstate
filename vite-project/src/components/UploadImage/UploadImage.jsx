@@ -14,6 +14,7 @@ const UploadImage = ({
   const handleNext = () => {
     setPropertyDetails((prev) => ({ ...prev, image: imageURL }));
     nextStep();
+    alert("your property has been added")
   };
   useEffect(() => {
     cloudinaryRef.current = window.cloudinary;
@@ -45,7 +46,7 @@ const UploadImage = ({
           className="uploadedImage"
           onClick={() => widgetRef.current?.open()}
         >
-          <img src={imageURL} alt="" />
+          <img src={imageURL} alt="" width={1000} />
         </div>
       )}
 

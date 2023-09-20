@@ -37,8 +37,8 @@ function Slider() {
                 y2="100.301"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#4361EE" />
-                <stop offset="1" stop-color="#4361EE" stop-opacity="0" />
+                <stop stopColor="#4361EE" />
+                <stop offset="1" stopColor="#4361EE" stopOpacity="0" />
               </linearGradient>
             </defs>
           </svg>

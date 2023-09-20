@@ -53,7 +53,7 @@ function Card() {
                           ></img>
                           <div>
                             <div className="card__details">
-                              <h3 className="card__price">£ {card.price}</h3>
+                              <h3 className="card__price">£ {card.price?.toLocaleString()}</h3>
                               <h4 className="card__house-title">
                                 {card.title}
                               </h4>

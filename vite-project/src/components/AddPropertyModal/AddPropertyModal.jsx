@@ -39,7 +39,7 @@ function AddPropertyModal({ opened, setOpened }) {
         closeOnClickOutside
         size={"90rem"}
       >
-        <Container h={"350px"} w={"100%"}>
+        <Container h={"950px"} w={"100%"}>
           <Stepper
             active={active}
             onStepClick={setActive}
