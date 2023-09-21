@@ -8,7 +8,12 @@
 
 body {
   	margin: 0; line-height: normal;
+	box-sizing: border-box;
 }
+a{
+	text-decoration: none;
+	color: black;
+  }
 :root {
   	
   	/* fonts */
@@ -31,3 +36,5 @@ body {
   	--br-xl: 20px;
   	
 }
+
+

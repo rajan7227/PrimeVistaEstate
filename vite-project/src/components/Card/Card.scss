@@ -1,68 +1,130 @@
 .card {
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 4rem 2rem 4rem;
-  background-color: #f2f5f5;;
+  margin: 3rem;
+  &__title {
+    color: var(--Colour-1, #4361ee);
+    font-size: 19.4px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 2.91px;
+  }
+  &__head {
+    color: var(--Text-Colour-2, #2b2b2b);
 
-  &__like{
-    margin-left: 1rem;
-    position: absolute;
-    top: 30px;
-    right: 35px;
-    color: red;
+    /* H2 - Semi Bold */
+    font-family: Poppins;
+    font-size: 39.8px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 47px; /* 118.09% */
   }
-  &__main {
-    display: flex;
-    justify-content: space-around;
+  &__paragraph {
+    color: var(--Text-Colour-3, #808080);
+    width: 500px;
+    /* Paragraph - Regular */
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px; /* 162.5% */
   }
-  &__wrapper {
-    border-radius: 3px solid red;
-    width: 250px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.3);
-    &:hover{
-        -webkit-box-shadow: 0px 5px 10px -1px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 5px 10px -1px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 5px 10px -1px rgba(0, 0, 0, 0.75);
-    
-    }
+  &__image {
+    border-radius: 30px;
+    object-fit: cover;
+    max-width: 400px;
   }
   &__details {
-    margin-left: 1rem;
-  }
-  &__title {
-    font-size: 0.8rem;
+    * {
+      margin: 4px 0;
+    }
   }
   &__price {
-    font-size: 0.7rem;
+    color: var(--Text-Colour-2, #2b2b2b);
+    /* H3 - Semibold */
+    font-family: Poppins;
+    font-size: 21.6px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  &__house-title {
+    color: var(--Text-Colour-2, #2b2b2b);
+
+    /* H4 - Semibold */
+    font-size: 19.4px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
   }
   &__address {
-    font-size: 0.7rem;
+    color: var(--Text-Colour-3, #808080);
+
+    /* Paragraph - Regular */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px; /* 162.5% */
   }
   &__feature {
     display: flex;
+  }
+  &__bed,
+  &__bath {
+    display: flex;
     justify-content: space-between;
-    padding: 0.5rem;
     align-items: center;
-    border-top: 0.7px solid grey;
-    p {
-      font-size: 0.7rem;
+  }
+  &__bedrooms,
+  &__bathrooms {
+    color: var(--Text-Colour-2, #2b2b2b);
+
+    /* Paragraph - Regular */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px; /* 162.5% */
+  }
+  &__context{
+    *{
+      margin: 0.6rem 0;
     }
-  }
-  &__image {
-    width: 100%;
-    height: 200px;
-    padding: 1.5rem;
-    border-radius: 10px;
-  }
-}
+    margin: auto;
+    display: flex;
+    flex-direction: column;
 
-.sliderbuttons{
-    margin: 1rem 0 1rem 0 ;
+    align-items: center;
 }
+  }
 
-.swiper-wrapper{
-    padding: 0.5rem;
+
+.sliderbuttons {
+ display: flex;
+ justify-content: flex-end;
+ margin: 1rem 0;
+ gap: 3rem;
+  /* Basic Button Styles */
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+
+  /* Default State */
+  .button-default {
+    background-color: #4361ee;
+    color: #fff;
+  }
+
+  /* Hover State */
+  .button-default:hover {
+    background-color: #2980b9;
+    transform: scale(1.05); /* Add a subtle hover effect */
+  }
 }

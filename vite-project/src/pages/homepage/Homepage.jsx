@@ -8,6 +8,7 @@ import { UserDetailContext } from "../../components/context/Context";
 
 import axios from "axios";
 import useFavorites from "../../hooks/useFavorites";
+import WhoWeAre from "../../components/WhoWeAre/WhoWeAre";
 
 function Homepage() {
 
@@ -56,6 +57,7 @@ function Homepage() {
       <Header />
       <Hero />
       <Slider />
+      <WhoWeAre/>
       <Card />
     </>
   );
