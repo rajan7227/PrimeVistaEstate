@@ -14,9 +14,7 @@ function WhoWeAre() {
               Assisting individuals in locating the appropriate real estate.
             </h2>
             <p className="who__paragraph">
-              Donec porttitor euismod dignissim. Nullam a lacinia ipsum, nec
-              dignissim purus. Nulla convallis ipsum molestie nibh malesuada, ac
-              malesuada leo volutpat.
+            We are a dedicated team committed to helping individuals find their ideal real estate properties. Additionally, we offer a unique opportunity for homeowners to list their houses for sale at absolutely no cost, ensuring a hassle-free and cost-effective way to connect buyers with their dream homes.
             </p>
           </div>
           <div className="who__image">
