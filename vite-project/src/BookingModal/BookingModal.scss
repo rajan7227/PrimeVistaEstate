@@ -1,0 +1,11 @@
+.calender{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &__button{
+        margin: 1rem;
+        padding: 0 2.5rem;
+        background-color: var(--primary-colour);
+    }
+}

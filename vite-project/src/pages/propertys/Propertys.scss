@@ -1,0 +1,198 @@
+// .search{
+//   max-width: 70%;
+//   margin:  2rem auto;
+// }
+
+// .propertys {
+
+//   &__wrapper {
+//     padding: 0.8rem;
+//     display: flex;
+//     flex-grow: 1;
+//   }
+//   &__card {
+//     margin: auto;
+//     border: 1px solid #d1d0cf;
+//     border-radius: 5px;
+//     max-width: 80%;
+//     display: flex;
+//   }
+
+//   &__image {
+//     display: flex;
+//     height: 100%;
+//     width: 40%;
+//     border-radius: 5px;
+//     margin: 0.3rem;
+//   }
+//   &__details {
+
+//     &-title {
+//       display: flex;
+//       justify-content: space-between;
+//       padding: 0.5rem;
+//       width: 100%;
+//     }
+//     &-info{
+//         padding: 0.5rem;
+//     }
+//     &-add{
+//             background-color: lightgreen;
+//     border-radius: 9px;
+//     font-size: 0.8rem;
+//     font-weight: 300;
+//     text-align: center;
+//     padding: 3px;
+//     }
+//     &-info{
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: flex-start;
+//         align-items: flex-start;
+//         p{
+//             font-size: 0.8rem;
+//         }
+//     }
+//     &-spec{
+//         display: flex;
+//         gap: 1rem;
+//     }
+//     &-section{
+//         display: flex;
+//         flex-direction: column;
+//     }
+
+//   }
+// }
+
+.property {
+  margin: 2rem auto;
+  max-width: 70%;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05); /* Add hover animation for scaling */
+  }
+
+  .property__wrapper {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  .property__container {
+    display: flex;
+    align-items: center;
+  }
+
+  .property__card {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+    .property__image {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .property__details {
+      padding: 10px 0;
+
+      &-bathrooms,
+      &-bedrooms {
+        color: var(--Text-Colour-2, #2b2b2b);
+
+        /* Paragraph - Regular */
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 26px; /* 162.5% */
+      }
+
+      .property__details-circle {
+        position: absolute;
+        background: rgb(2, 0, 36);
+        background: linear-gradient(
+          299deg,
+          rgba(2, 0, 36, 0.2) 0%,
+          rgba(246, 246, 251, 0.2) 0%,
+          rgba(39, 72, 227, 0.2) 99%
+        );
+        width: 500px;
+        height: 500px;
+        top: 164px;
+        right: -32px;
+        z-index: 5;
+        
+        border-radius: 50%;
+      }
+
+      .property__details-title {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 12px;
+        color: #888;
+
+        .property__details-add {
+          font-weight: bold;
+          color: #3498db;
+          font-size: 1.2rem;
+          display: flex;
+          justify-content: flex-end;
+        }
+
+        .property__details-save {
+          cursor: pointer;
+        }
+      }
+
+      .property__details-info {
+        margin-top: 10px;
+
+        .property__details-price {
+          font-size: 24px;
+          font-weight: 600;
+        }
+
+        .property__details-spec {
+          display: flex;
+          margin-top: 10px;
+
+          span {
+            flex: 1;
+            text-align: center;
+
+            p {
+              font-size: 14px;
+            }
+          }
+        }
+
+        .property__details-section {
+          margin-top: 10px;
+
+          .property__details-name {
+            color: var(--Text-Colour-2, #2b2b2b);
+
+            /* H4 - Semibold */
+            font-family: Poppins;
+            font-size: 19.4px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+          }
+
+          .property__address,
+          .property__description {
+            font-size: 17px;
+            color: #888;
+          }
+        }
+      }
+    }
+  }
+}

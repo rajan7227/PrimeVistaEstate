@@ -1,0 +1,130 @@
+.card {
+  margin: 3rem;
+  &__title {
+    color: var(--Colour-1, #4361ee);
+    font-size: 19.4px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 2.91px;
+  }
+  &__head {
+    color: var(--Text-Colour-2, #2b2b2b);
+
+    /* H2 - Semi Bold */
+    font-family: Poppins;
+    font-size: 39.8px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 47px; /* 118.09% */
+  }
+  &__paragraph {
+    color: var(--Text-Colour-3, #808080);
+    width: 500px;
+    /* Paragraph - Regular */
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px; /* 162.5% */
+  }
+  &__image {
+    border-radius: 30px;
+    object-fit: cover;
+    max-width: 400px;
+  }
+  &__details {
+    * {
+      margin: 4px 0;
+    }
+  }
+  &__price {
+    color: var(--Text-Colour-2, #2b2b2b);
+    /* H3 - Semibold */
+    font-family: Poppins;
+    font-size: 21.6px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  &__house-title {
+    color: var(--Text-Colour-2, #2b2b2b);
+
+    /* H4 - Semibold */
+    font-size: 19.4px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  &__address {
+    color: var(--Text-Colour-3, #808080);
+
+    /* Paragraph - Regular */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px; /* 162.5% */
+  }
+  &__feature {
+    display: flex;
+  }
+  &__bed,
+  &__bath {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__bedrooms,
+  &__bathrooms {
+    color: var(--Text-Colour-2, #2b2b2b);
+
+    /* Paragraph - Regular */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px; /* 162.5% */
+  }
+  &__context{
+    *{
+      margin: 0.6rem 0;
+    }
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+  }
+
+
+.sliderbuttons {
+ display: flex;
+ justify-content: flex-end;
+ margin: 1rem 0;
+ gap: 3rem;
+  /* Basic Button Styles */
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+
+  /* Default State */
+  .button-default {
+    background-color: #4361ee;
+    color: #fff;
+  }
+
+  /* Hover State */
+  .button-default:hover {
+    background-color: #2980b9;
+    transform: scale(1.05); /* Add a subtle hover effect */
+  }
+}

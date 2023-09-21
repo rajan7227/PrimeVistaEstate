@@ -1,0 +1,144 @@
+@import "../../../partials/mixins";
+.hero {
+  padding: 6rem 1rem;
+  border-radius: 0px 0px 800px 800px;
+  background: linear-gradient(
+    180deg,
+    rgba(76, 201, 240, 0) 0%,
+    rgba(67, 97, 238, 0.3) 100%
+  );
+  @include tablet {
+    padding: 0;
+  }
+  &__wrapper {
+ 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  &__container {
+    @include tablet {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 40px;
+    }
+  }
+  &__context {
+    margin: 2rem;
+    
+
+    @include tablet{
+      width: 350px;
+    }
+    @include desktop{
+      width: 580px;
+    }
+    &-h2 {
+      font-size: 16px;
+      color: var(--Colour-1, #4361ee);
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 2.91px;
+      @include tablet {
+        font-size: 19.4px;
+      }
+    }
+    &-h3 {
+      
+      color: var(--Text-Colour-1, #0b090a);
+      font-size: 39.3px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 40px;
+      @include tablet{
+         font-size: 35.3px;
+         line-height: 45px;
+      }
+      @include desktop{
+        font-size: 57.3px;
+         line-height: 65px;
+      }
+    }
+    &-p {
+    
+      color: var(--Text-Colour-3, #808080);
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 20px;
+
+      @include tablet{
+        
+        font-size: 16.3px;
+        line-height: 26px;
+     }
+    }
+  }
+
+  &__image {
+    position: relative;
+    &-svg {
+      position: relative;
+      bottom: 311px;
+      left: 574px;
+      z-index: -1;
+     @include tablet{
+      bottom: -34px;
+    left: 482px;
+    z-index: -1;
+     }
+     @include desktop{
+      bottom: 311px;
+      left: 574px;
+      z-index: -1;
+     }
+    }
+    &-image {
+      border-radius: 20px;
+      width: 80%;
+  
+      @include desktop{
+        width: auto;
+      }
+    }
+  }
+}
+
+.ellipse {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  @include tablet{flex-direction: column;
+  justify-content: center;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 710px;
+    height: 100px;
+  } }
+  
+  &__customer,
+  &__property {
+
+    img {
+      margin-right: 10px;
+    }
+    width: 320px;
+    height: 90px;
+   margin: 1rem 0;
+    border-radius: 50px;
+    background: var(--White, #fff);
+    box-shadow: 10px 30px 50px 0px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include tablet{
+      margin: 0;
+       padding: 0 34px;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@import '../partials/mixins';
+
+.app {
+  @include tablet {
+        max-width: 1600px;
+        margin: auto;
+  }
+}
+    

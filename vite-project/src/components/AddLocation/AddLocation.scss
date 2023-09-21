@@ -1,0 +1,29 @@
+.form {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+    gap: 3rem;
+  }
+  &__inputs {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   
+  }
+  &__map {
+    flex: 1;
+  }
+ 
+}
+
+.input__button{
+  border: none;
+  background-color: #3a0ca3;
+  padding: 5px 15px;
+  color: white;
+  border-radius: 20px;
+}

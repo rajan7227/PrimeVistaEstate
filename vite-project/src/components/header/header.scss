@@ -1,0 +1,106 @@
+@import '../../../partials/mixins';
+
+.header {
+  height: 5rem;
+  background-color: var(--white);
+  width: 100%;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet{
+      flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.6rem 0;
+    }
+    
+  }
+
+  &__nav{
+    width: 70%;
+    margin: auto;
+    @include tablet{
+      width: 350px;
+    }
+  }
+  &__logo{
+    display: flex;
+    flex-direction: column;
+
+    @include tablet{
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
+  }
+    
+  }
+  &__ul {
+
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+  }
+  &__logowrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    @include tablet{
+      margin: 0;
+    }
+  }
+  &__logosvg {
+    background-color: var(--primary-colour);
+    border-radius: 50%;
+    padding: 0.6rem;
+  }
+  &__account{
+    margin: 1rem 0;
+    @include tablet{
+      margin: 0;
+    }
+  }
+  &__account-ul {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+  }
+  &__login {
+    border: none;
+    font-size: var(--h5-buttons-size);
+    font-weight: 500;
+  }
+  &__logout,&__login,&__resgister {
+    border: none;
+    background-color: var(--white);
+    font-size: var(--h5-buttons-size);
+    font-weight: 500;
+  }
+  &__logoname {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  &__addproperty {
+    background-color: var(--primary-colour);
+    padding: 15px 18px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-around;
+    width: 160px;
+    margin-left: 1rem;
+  }
+  &__logo-addproperty {
+  }
+  &__logo-addlisting {
+    font-size: var(--h5-buttons-size);
+    font-weight: 500;
+    color: var(--white);
+    text-align: center;
+  }
+}
+
