@@ -17,8 +17,7 @@ function Hero() {
               </h3>
               <p className="hero__context-p">
                 {" "}
-                Etiam eget elementum elit. Aenean dignissim dapibus vestibulum.
-                Integer a dolor eu sapien sodales vulputate ac in purus.
+                Discover your dream home that perfectly matches your desires and lifestyle. Let us help you turn your house-hunting journey into a love story with the perfect home!
               </p>
             </div>
             <div className="hero__image-wrapper">
