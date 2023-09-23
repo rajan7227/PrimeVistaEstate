@@ -65,6 +65,8 @@ This project is licensed under the MIT License.
 
 This project is a React application set up with Vite, a fast build tool for modern web applications. It includes features like hot module reloading (HMR), ESLint rules, and two official Vite plugins for React.
 
+ [BACKEND RESPOSITORY](https://github.com/rajan7227/PrimeVistaEstate-SERVER)
+
 ### Project Structure
 
 The project structure is as follows:
